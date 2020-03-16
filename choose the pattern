@@ -1,0 +1,168 @@
+#include <stdio.h>
+#define MAX 10
+int main()
+{
+    int i, j, n,choice,N,c,k;
+    int space=4;
+     printf("Enter the pattern number...:\n");
+     printf("PATTERN1:FOR HEART\n");
+     printf("PATTERN2:FOR PYRAMID\n");
+     printf("PATTERN3:FOR DIAMOND\n");
+     printf("PATTERN4:FOR NUMBERED X\n");
+    scanf("%d", &choice);
+
+    printf("Enter value of n : ");
+    scanf("%d", &n);
+if(choice==1)
+{
+ for(i=n/2; i<=n; i+=2)
+    {
+        for(j=1; j<n-i; j+=2)
+        {
+            printf(" ");
+        }
+
+        for(j=1; j<=i; j++)
+        {
+            printf("*");
+        }
+
+        for(j=1; j<=n-i; j++)
+        {
+            printf(" ");
+        }
+
+        for(j=1; j<=i; j++)
+        {
+            printf("*");
+        }
+
+        printf("\n");
+    }
+
+    for(i=n; i>=1; i--)
+    {
+        for(j=i; j<n; j++)
+        {
+            printf(" ");
+        }
+
+        for(j=1; j<=(i*2)-1; j++)
+        {
+            printf("*");
+        }
+
+        printf("\n");
+    }
+}
+if(choice==2)
+{
+	for(i=0;i< MAX;i++)
+    {
+	   
+	    for(j=0;j< space;j++)
+	    {
+		    printf(" ");
+	    }
+	    for(j=0;j<=i;j++)
+	    {
+		    printf("* ");
+	    }
+		
+	    printf("\n");
+	    space--;	
+    }
+}
+if(choice==3)
+{
+	
+  printf("Enter number of rows\n");
+  scanf("%d", &n);
+
+  space = n - 1;
+
+  for (k = 1; k <= n; k++)
+  {
+    for (c = 1; c <= space; c++)
+      printf(" ");
+
+    space--;
+
+    for (c = 1; c <= 2*k-1; c++)
+      printf("*");
+
+    printf("\n");
+  }
+
+  space = 1;
+
+  for (k = 1; k <= n - 1; k++)
+  {
+    for (c = 1; c <= space; c++)
+      printf(" ");
+
+    space++;
+
+    for (c = 1 ; c <= 2*(n-k)-1; c++)
+      printf("*");
+
+    printf("\n");
+  }
+
+}
+if(choice==4)
+{
+	for(i=1; i<=N; i++)
+    {
+       
+        for(j=1; j<i; j++)
+        {
+            printf(" ");
+        }
+
+        printf("%d", i);
+
+        
+        for(j=1; j<=((N - i) * 2 - 1); j++)
+        {
+            printf(" ");
+        }
+
+       
+        if(i != N)
+            printf("%d", i);
+
+        
+        printf("\n");
+    }
+
+    
+    for(i=N-1; i>=1; i--)
+    {
+        for(j=1; j<i; j++)
+        {
+            printf(" ");
+        }
+
+        printf("%d", i);
+
+        for(j=1; j<=((N - i ) * 2 - 1); j++)
+        {
+            printf(" ");
+        }
+
+        printf("%d", i);
+
+        printf("\n");
+    }
+}
+    return 0;
+}
+
+
+
+
+ 
+
+
+
